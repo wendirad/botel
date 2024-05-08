@@ -1,6 +1,7 @@
 import logging
 from core import config
 from sqlalchemy import create_engine
+from .mongo import MongoDBConnection
 
 logger = config.LOGGER
 
@@ -32,5 +33,7 @@ class EngineFactory(object):
             return create_engine(
                 f"postgresql://{username}:{password}@{host}:{port}/{name}"
             )
+        elif engine == "mongodb":
+            return MongoDBConnection()
         else:
             raise ValueError("Unsupported database engine")
