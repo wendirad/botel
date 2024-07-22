@@ -17,3 +17,26 @@ exclude = '''
 	| migrations
   )/
 '''
+
+[tool.poetry]
+name = "botel"
+version = "0.0.1a"
+description = "A MVC aiogram framework inspired by djang"
+authors = ["Hundera Awoke <hunderaweke@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+aiogram = "^3.5.0"
+python-decouple = "^3.8"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.30"}
+motor = "^3.4.0"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
